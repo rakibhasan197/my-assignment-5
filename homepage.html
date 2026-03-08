@@ -72,6 +72,44 @@
         </div>
         <!-- open status card section -->
          
+        <div id="Loading-spinner" class=" flex justify-center items-center mt-40 hidden">
+          <span class="loading loading-spinner loading-xl"></span>
+        </div>
+
+
+        <!-- modal areas -->
+                        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="issuesModal.showModal()">open modal</button> -->
+        <dialog id="issuesModal" class="modal">
+          <div class="modal-box">
+           
+            
+                <h1 id="modalTitle" class="font-bold text-2xl">Fix broken image uploads</h1>
+                <div class="flex justify-center items-center gap-6">
+                  <button id="status" class="bg-green-500 px-4 py-2 font-semibold rounded-full text-white">open</button>
+              <ul class="flex gap-4">
+                <li id="data"><a href="">Opened by Fahim Ahmed</a></li>
+                <li id="date"><a href="">22/02/2026</a></li>
+              </ul>
+            </div>
+             <div class="mt-5">
+                <span id="bug" class="bg-red-100 px-2 py-1 text-red-500 rounded-full">bug</span>
+                <span id="helpWanted" class="bg-orange-100 px-2 py-1 text-red-500 rounded-full">help wanted</span>   
+              </div>
+                 <p id="description" class="text-gray-400 mt-5">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+             <div class="flex gap-40">
+                  <p id="assine" class="font-semibold flex flex-col">assignee: 
+                  <span  class="font-bold text-xl">Fahim Ahmed</span></p>
+                  <p id="priority" class="flex flex-col">Priority: <span class="bg-red-400 rounded-full text-white py-1 px-2">High</span></p>
+             </div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn btn-primary rounded-md">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
     </section>
 
    
