@@ -49,7 +49,7 @@ issues.forEach ((issue)=>{
            </div>
 
            <div class="mt-4 flex flex-wrap">
-            <span class="bg-yellow-100 font-semibold text-red-400 px-8 py-2 rounded-full">${issue.labels}</span>
+            ${showLabels(issue.labels)}
             
            </div>
          <div>
@@ -253,3 +253,7 @@ document.getElementById('searchBtn').addEventListener('click', ()=>{
     
 })
 
+
+function showLabels(labels) {
+  return labels.map(item => `<span class="bg-yellow-100  text-red-400 px-4 py-2 rounded-full">${item}</span>`).join(" ");
+}
