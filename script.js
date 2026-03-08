@@ -13,6 +13,6 @@ document.getElementById('login').addEventListener('click', function(){
     alert('invalid password')
     return
   }
-  window.location.assign('/homepage.html')
+  window.location.assign('./homepage.html');
   
 })
