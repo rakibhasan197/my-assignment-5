@@ -4,8 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- font cdn -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
-<body>
-  <h2>welcome to another htmlinput-password</h2>
+<body class="bg-gray-50">
+  <!-- navbar -->
+   <div class="py-6 px-10 flex justify-between bg-white shadow-sm">
+    <!-- navbar left -->
+  <div class="flex items-center gap-4">
+   <img src="assets/github-logo.png" alt="">
+   <h1 class="text-4xl font-bold">GitHub Issues Tracker</h1>
+  </div>
+   <!-- search input -->
+<div class="flex items-center gap-3">
+<label class="input">
+  <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2.5"
+      fill="none"
+      stroke="currentColor"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </g>
+  </svg>
+  <input type="search" class="line-clamp-2 text-lg font-semibold"placeholder="Search issues...." />
+</label>
+ <button class="btn btn-primary font-semibold">+ New Issue</button>
+</div>
+  </div>
+  
+   <!-- tab button section -->
+    <div class="w-[85%] mx-auto p-[24px] bg-white shadow-sm mt-[60px]">
+      <button class="font-bold text-xl px-8 py-2 btn btn-primary rounded-md" id="allIssueBtn" onclick="toggleBtn('allIssueBtn')">all</button>
+      <button class="font-bold text-xl px-8 py-2 btn btn-outline rounded-md" id="openBtn" onclick="toggleBtn('openBtn')">open</button>
+      <button class="font-bold text-xl px-8 py-2 btn btn-outline rounded-md" id="closedBtn" onclick="toggleBtn('closedBtn')">closed</button>
+    </div>
+<!-- api section -->
+    <section>
+      <!-- card counting section -->
+      <div class="w-[85%] mx-auto mt-[60px] bg-white shadow-sm flex p-8 justify-between">
+       <div class="flex gap-2">
+         <img src="assets/Aperture.png" alt="">
+       <div>
+         <span class="font-bold text-xl">50 Issues</span>
+        <p class="font-semibold text-gray-400">Track and manage your project issues</p>
+       </div>
+      </div>
+     
+       <!-- open close symbol -->
+      <div class="flex gap-2">
+        <p class="gap-2"><span class="bg-green-500 py-[1px] px-1 rounded-[70%]"></span><span class="font-semibold text-2xl">open</span></p>
+        <p class="gap-2"><span class="bg-purple-500 py-[1px] px-1 rounded-[70%]"></span><span class="font-semibold text-2xl">open</span></p>
+      </div>
+        </div>
+<!--  all card section  -->
+  
+        
+          <div id="card-container" class="w-[85%] mx-auto mt-[60px] bg-white shadow-sm grid grid-cols-4 gap-3">
+     
+        </div>
+        <!-- open status card section -->
+         
+    </section>
+
+   
+      
+    <script src="index.js"></script>
 </body>
 </html>
