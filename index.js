@@ -6,6 +6,7 @@ const closedBtn = document.getElementById('closedBtn')
 const loadingSpinner = document.getElementById('Loading-spinner')
 const cardContainer = document.getElementById('card-container')
 const issuesModal = document.getElementById('issuesModal')
+const issueCount = document.getElementById('issueCount')
 
 // all issue load kore anar jonno 
 const loadAllIssues = async ()=>{
@@ -28,6 +29,7 @@ const hideLoading =()=>{
 // all issue display kore dekhanor jonno
 const displayAllIssue=(issues)=>{
   // console.log(issues)
+  issueCount.innerText = issues.length + " Issues";
 const cardContainer = document.getElementById('card-container')
 cardContainer.innerHTML = '';
 
@@ -69,7 +71,7 @@ const toggleBtn=(id)=>{
     openBtn.classList.add('btn-outline');
     closedBtn.classList.add('btn-outline')
     loadAllIssues();
-  }
+  } 
   else if(id == 'openBtn'){
     openBtn.classList.remove('btn-outline')
     openBtn.classList.add('btn-primary')
@@ -101,6 +103,8 @@ const openCardDisplay =(allData)=>{
 
   const openData = allData.filter(item=> item.status == 'open');
   // console.log(openData)
+
+   issueCount.innerText = openData.length + " Open Issues";
   const cardContainer = document.getElementById('card-container')
   cardContainer.innerHTML = '';
    openData.forEach((open)=> {
@@ -150,7 +154,7 @@ const closeDataLoad = async()=>{
 const displayClosedData =(allData)=>{
 const closedData = allData.filter(item => item.status == 'closed');
 // console.log(closedData)
-
+issueCount.innerText = closedData.length + " Closed Issues";
 const cardContainer = document.getElementById('card-container');
  cardContainer.innerHTML ='';
  closedData.forEach((closed)=>{
@@ -234,10 +238,12 @@ loadAllIssues();
 document.getElementById('searchBtn').addEventListener('click', ()=>{
   const input = document.getElementById('input-search');
   const searchValue = input.value.trim().toLowerCase();
+  showLoading();
   console.log(searchValue);
   fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`)
   .then(res=> res.json())
   .then((data)=>{
+    hideLoading();
     const allIssues = data.data;
     console.log(allIssues)
   
