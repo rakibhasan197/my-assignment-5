@@ -1,4 +1,4 @@
-console.log('hello js')
+
 
 const allBtn = document.getElementById('allIssueBtn')
 const openBtn = document.getElementById('openBtn')
@@ -28,13 +28,13 @@ const hideLoading =()=>{
 }
 // all issue display kore dekhanor jonno
 const displayAllIssue=(issues)=>{
-  // console.log(issues)
+  
   issueCount.innerText = issues.length + " Issues";
 const cardContainer = document.getElementById('card-container')
 cardContainer.innerHTML = '';
 
 issues.forEach ((issue)=>{
-  // console.log(issue)
+ 
     const card = document.createElement('div')
     card.className = ` border-t-5 ${issue.status === 'closed' ?  'border-purple-500' : 'border-green-500'}`
     card.innerHTML =`
